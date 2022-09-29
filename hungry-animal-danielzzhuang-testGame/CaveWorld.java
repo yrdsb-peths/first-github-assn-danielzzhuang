@@ -68,9 +68,6 @@ public class CaveWorld extends World
             getRandomDice();
             showAllDice();
             player.show();
-            if(diceTimer.millisElapsed() > 300){
-                cBG.moveForward();
-            }   
             round+=1;
         }
         showText(String.valueOf(player.getPlayerHp()),150, 450);
