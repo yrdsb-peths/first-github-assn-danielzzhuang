@@ -11,7 +11,7 @@ public class playerCharacter extends Actor
 {
     public int playerMaxHp=100;
     public int playerMinHp=0;
-    public int playerHp=30;
+    public int playerHp=playerMaxHp;
     /**
      * Act - do whatever the Ele wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

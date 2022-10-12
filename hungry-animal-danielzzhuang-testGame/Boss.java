@@ -6,34 +6,56 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Boss extends Actor
+public class boss extends Actor
 {
     public int bossMaxHp=500;
     public int bossMinHp=0;
-    public int bossHp=500;
+    public int bossHp=bossMaxHp;
     /**
      * Act - do whatever the boss wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    /**
+     * Act - do whatever the Ele wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void boss(){
+        
+    }
+    public int getBossHp(){
+        return bossHp;
+    }
+    
+    public void setBossHp(int change){
+        if(bossHp+change > bossMaxHp){
+            bossHp=bossMaxHp;
+        }
+        else if(bossHp+change < bossMinHp){
+            bossHp=bossMinHp;
+        }
+        else{
+            bossHp=bossHp+change;
+        }
+    }
+    
     public boolean bossAlive(){
         if(bossHp==0){
             return false;
         }
         return true;
     }
-    public int getBossHp(){
-        return bossHp;
+    
+    public void show(){
+        setLocation(770, 450);
     }
-    public void setBossHp(int change){
-        if(bossHp+change>bossMaxHp){
-            bossHp=bossMaxHp;
-        }
-        else{
-            bossHp+=change;
-        }
+    
+    public void hide(){
+        setLocation(900, 450);
     }
-    public void act()
-    {
-        setLocation(getX(), getY());
+    
+    public void act(){
+        GreenfootImage image = getImage();
+        image.scale(150,150);
+        setImage(image);
     }
 }

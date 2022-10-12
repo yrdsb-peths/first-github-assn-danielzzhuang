@@ -17,9 +17,11 @@ public class gameDice_III extends Actor
     public gameDice_III(){
         
     }
-    
     public void setDice3Point(int point){
         dicePoint=point+1;
+    }
+    public int getDice3Point(){
+        return dicePoint;
     }
     public void show()
     {

@@ -20,6 +20,9 @@ public class gameDice_II extends Actor
     public void setDice2Point(int point){
         dicePoint=point+1;
     }
+    public int getDice2Point(){
+        return dicePoint;
+    }
     public void show()
     {
         setLocation(120, 560);
